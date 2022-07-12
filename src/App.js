@@ -12,7 +12,7 @@ import { savePalette, getPalette } from "./services/palettes";
 
 const initialPalette = {
   name: "New Palette",
-  colors: [],
+  colors: []
 };
 
 function App() {
@@ -45,7 +45,7 @@ function App() {
     savePalette(
       {
         ...changedPalette,
-        colors: changedPalette.colors.map((color) => ({ code: color.code })),
+        colors: changedPalette.colors.map((color) => ({ code: color.code }))
       },
       currentUser._id
     );
@@ -57,7 +57,8 @@ function App() {
       setCurrentUser(user);
     } catch (err) {
       setCurrentUser(null);
-      alert("Login failed");
+      console.log(err);
+      alert("Login failed!");
     }
   };
 
