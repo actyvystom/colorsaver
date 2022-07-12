@@ -1,4 +1,4 @@
-import mongoose, { mongo } from "mongoose";
+import mongoose from "mongoose";
 import connectToMongodb from "../_database/connect-to-mongodb";
 import { Palette } from "../_database/models";
 
