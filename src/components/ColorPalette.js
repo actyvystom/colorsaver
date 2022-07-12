@@ -6,7 +6,7 @@ import { ColorForm } from "./ColorForm";
 import Input from "./Input.js";
 
 export const ColorPalette = ({ palette, onChange }) => {
-  const [name, setName] = useState();
+  const [name, setName] = useState("");
   const [nameDirty, setNameDirty] = useState(false);
 
   useEffect(() => {
@@ -16,14 +16,14 @@ export const ColorPalette = ({ palette, onChange }) => {
   const handleAddColor = (code) => {
     onChange({
       ...palette,
-      colors: [{ _id: nanoid(), code }, ...palette.colors],
+      colors: [{ _id: nanoid(), code }, ...palette.colors]
     });
   };
 
   const handleDeleteColor = (id) => {
     onChange({
       ...palette,
-      colors: palette.colors.filter((color) => color._id !== id),
+      colors: palette.colors.filter((color) => color._id !== id)
     });
   };
 
@@ -37,7 +37,7 @@ export const ColorPalette = ({ palette, onChange }) => {
       onChange({
         ...palette,
         name: event.target.value,
-        colors: [...palette.colors],
+        colors: [...palette.colors]
       });
       setNameDirty(false);
     }
@@ -49,9 +49,9 @@ export const ColorPalette = ({ palette, onChange }) => {
       colors: palette.colors.map((color) => {
         return {
           ...color,
-          code: color._id === id ? code : color.code,
+          code: color._id === id ? code : color.code
         };
-      }),
+      })
     });
   };
   return (
